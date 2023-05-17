@@ -1,4 +1,5 @@
-import {Sequelize} from "sequelize";
+import {Sequelize} from "sequelize-typescript";
+import {Client} from './Client';
 
 const checkConnection= async () => {
   try {
@@ -13,6 +14,7 @@ export const connection = new Sequelize('factuur','postgres', 'password',{
   dialect: "postgres",
   host:"localhost",
   logging: false,
+  models:[Client]
 });
 
 export const connectionDB = async () => {
