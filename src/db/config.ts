@@ -19,7 +19,7 @@ export const connection = new Sequelize('factuur','postgres', 'password',{
 
 export const connectionDB = async () => {
   try{
-    await connection.sync();
+    await connection.sync({force : true});
     checkConnection();
   }catch(error){
     console.log(error);
